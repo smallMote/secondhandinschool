@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--配置类和表的对应关系-->
+    <class name="com.xianlema.bean.User" table="t_user">
+        <id name="StudentID" column="StudentID">
+            <!--设置主键/自动增长-->
+            <generator class="assigned"/>
+        </id>
+        <property name="name" column="name"/>
+        <property name="password" column="password"/>
+        <property name="nickname" column="nickname"/>
+        <property name="sex" column="sex"/>
+        <property name="age" column="age"/>
+        <property name="classgrade" column="classgrade"/>
+        <property name="major" column="major"/>
+        <property name="headimg" column="headimg"/>
+    </class>
+</hibernate-mapping>

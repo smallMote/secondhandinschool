@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--1.配置数据库信息-->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql:///secondhand</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">mx12313211..</property>
+        <!--3.配置hibernate信息-->
+        <!--输出底层SQL语句-->
+        <property name="hibernate.show_sql">true</property>
+        <!--格式化SQL语句-->
+        <property name="hibernate.format_sql">true</property>
+        <!--让hibernate自动创建表-->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!--数据库方言(MySQL数据库特有的关键字)
+            注意是MySQL5InnoDBDialect，而不是MySQLInnoDBDialect，否则不能自动建表。
+            TYPE=MyISAM 太古老了，在MySQL 5.6.20上已经不支持了
+        -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+        <!--3.把映射文件放到核心文件中-->
+        <mapping resource="com/xianlema/bean/User.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
